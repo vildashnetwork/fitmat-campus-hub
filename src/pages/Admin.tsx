@@ -26,9 +26,9 @@ const Admin = () => {
   const allElections = storage.getElections();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20 md:pb-0">
       <Header />
-      <div className="container py-8">
+      <div className="container py-8 px-4">
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
             <Shield className="h-8 w-8 text-primary" />

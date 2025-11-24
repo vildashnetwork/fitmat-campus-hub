@@ -50,8 +50,39 @@ All colors MUST be HSL.
     
     --shadow-card: 0 2px 8px -2px hsl(220 13% 13% / 0.1);
     --shadow-elevated: 0 8px 24px -4px hsl(220 13% 13% / 0.15);
+    --shadow-glow: 0 0 20px hsl(216 98% 52% / 0.2);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Candidate Color Tokens */
+    --candidate-1: 59 130 246;
+    --candidate-1-light: 219 234 254;
+    --candidate-1-dark: 30 64 175;
+
+    --candidate-2: 236 72 153;
+    --candidate-2-light: 252 231 243;
+    --candidate-2-dark: 157 23 77;
+
+    --candidate-3: 251 146 60;
+    --candidate-3-light: 254 243 199;
+    --candidate-3-dark: 194 65 12;
+
+    --candidate-4: 34 197 94;
+    --candidate-4-light: 220 252 231;
+    --candidate-4-dark: 21 128 61;
+
+    --candidate-5: 168 85 247;
+    --candidate-5-light: 243 232 255;
+    --candidate-5-dark: 107 33 168;
+
+    --candidate-6: 239 68 68;
+    --candidate-6-light: 254 226 226;
+    --candidate-6-dark: 185 28 28;
+
+    /* Glassmorphism */
+    --glass-bg: hsl(0 0% 100% / 0.7);
+    --glass-border: hsl(0 0% 100% / 0.2);
+    --glass-blur: blur(12px);
   }
 
   .dark {
@@ -91,6 +122,11 @@ All colors MUST be HSL.
 
     --shadow-card: 0 2px 8px -2px hsl(0 0% 0% / 0.3);
     --shadow-elevated: 0 8px 24px -4px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 20px hsl(216 98% 52% / 0.3);
+
+    /* Glassmorphism Dark Mode */
+    --glass-bg: hsl(220 13% 12% / 0.7);
+    --glass-border: hsl(220 13% 20% / 0.3);
   }
 }
 
@@ -132,4 +168,22 @@ All colors MUST be HSL.
   .transition-smooth {
     transition: var(--transition-smooth);
   }
+
+  .glass-panel {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .candidate-color-1 { background: hsl(var(--candidate-1)); }
+  .candidate-color-2 { background: hsl(var(--candidate-2)); }
+  .candidate-color-3 { background: hsl(var(--candidate-3)); }
+  .candidate-color-4 { background: hsl(var(--candidate-4)); }
+  .candidate-color-5 { background: hsl(var(--candidate-5)); }
+  .candidate-color-6 { background: hsl(var(--candidate-6)); }
 }
