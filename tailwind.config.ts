@@ -47,6 +47,36 @@ export default {
           DEFAULT: "hsl(var(--warning))",
           foreground: "hsl(var(--warning-foreground))",
         },
+        candidate1: {
+          DEFAULT: "hsl(var(--candidate-1))",
+          light: "hsl(var(--candidate-1-light))",
+          dark: "hsl(var(--candidate-1-dark))",
+        },
+        candidate2: {
+          DEFAULT: "hsl(var(--candidate-2))",
+          light: "hsl(var(--candidate-2-light))",
+          dark: "hsl(var(--candidate-2-dark))",
+        },
+        candidate3: {
+          DEFAULT: "hsl(var(--candidate-3))",
+          light: "hsl(var(--candidate-3-light))",
+          dark: "hsl(var(--candidate-3-dark))",
+        },
+        candidate4: {
+          DEFAULT: "hsl(var(--candidate-4))",
+          light: "hsl(var(--candidate-4-light))",
+          dark: "hsl(var(--candidate-4-dark))",
+        },
+        candidate5: {
+          DEFAULT: "hsl(var(--candidate-5))",
+          light: "hsl(var(--candidate-5-light))",
+          dark: "hsl(var(--candidate-5-dark))",
+        },
+        candidate6: {
+          DEFAULT: "hsl(var(--candidate-6))",
+          light: "hsl(var(--candidate-6-light))",
+          dark: "hsl(var(--candidate-6-dark))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",

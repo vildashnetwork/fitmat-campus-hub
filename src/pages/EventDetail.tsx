@@ -138,9 +138,9 @@ const EventDetail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20 md:pb-0">
       <Header />
-      <div className="container py-8">
+      <div className="container py-8 px-4">
         <Button variant="ghost" onClick={() => navigate('/events')} className="mb-6">
           <ArrowLeft className="mr-2 h-4 w-4" />
           {t('common.back')}
@@ -247,7 +247,7 @@ const EventDetail = () => {
 
           {/* Bet Slip */}
           <div className="lg:col-span-1">
-            <Card className="shadow-elevated sticky top-24">
+            <Card className="glass-panel shadow-glow sticky top-24">
               <CardHeader>
                 <CardTitle>{t('bet.slip')}</CardTitle>
               </CardHeader>

@@ -90,9 +90,9 @@ const Voting = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20 md:pb-0">
       <Header />
-      <div className="container py-8">
+      <div className="container py-8 px-4">
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">{t('vote.title')}</h1>
           <p className="text-muted-foreground">
@@ -130,19 +130,27 @@ const Voting = () => {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <div className="grid md:grid-cols-3 gap-6">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                       {election.candidates.map(candidate => {
                         const voteCount = voteCounts[candidate.id] || 0;
                         const percentage = totalVotes > 0 ? (voteCount / totalVotes) * 100 : 0;
 
                         return (
-                          <Card key={candidate.id} className="border-2 hover:border-primary transition-smooth">
-                            <CardContent className="p-6">
-                              <div className="text-5xl mb-4 text-center">{candidate.photo}</div>
-                              <h3 className="text-xl font-bold mb-2 text-center">
+                        <Card key={candidate.id} className="border-2 hover:border-primary transition-smooth hover:scale-[1.02]" style={{ borderColor: candidate.colorIndex ? `hsl(var(--candidate-${candidate.colorIndex}))` : undefined }}>
+                            <CardContent className="p-4 md:p-6">
+                              <div className="flex items-center gap-3 mb-3">
+                                {candidate.colorIndex && (
+                                  <div 
+                                    className="h-3 w-3 rounded-full shadow-glow" 
+                                    style={{ background: `hsl(var(--candidate-${candidate.colorIndex}))` }}
+                                  />
+                                )}
+                                <div className="text-4xl md:text-5xl">{candidate.photo}</div>
+                              </div>
+                              <h3 className="text-lg md:text-xl font-bold mb-2">
                                 {candidate.name}
                               </h3>
-                              <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
+                              <p className="text-xs md:text-sm text-muted-foreground mb-4 line-clamp-3">
                                 {candidate.manifesto}
                               </p>
                               

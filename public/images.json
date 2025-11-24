@@ -1,0 +1,94 @@
+{
+  "images": [
+    {
+      "component": "Index Hero",
+      "path": "src/assets/hero-campus.jpg",
+      "description": "Modern college campus aerial view with students",
+      "credit": "Generated via AI",
+      "usage": "Hero banner on landing page"
+    },
+    {
+      "component": "Candidate 1 - Amina",
+      "path": "src/assets/candidate-1.jpg",
+      "candidateId": "c1",
+      "color": "#3B82F6",
+      "colorLight": "#DBEAFE",
+      "colorDark": "#1E40AF",
+      "description": "Professional portrait of young African woman student",
+      "credit": "Generated via AI",
+      "usage": "Election candidate card"
+    },
+    {
+      "component": "Candidate 2 - John",
+      "path": "src/assets/candidate-2.jpg",
+      "candidateId": "c2",
+      "color": "#EC4899",
+      "colorLight": "#FCE7F3",
+      "colorDark": "#9D174D",
+      "description": "Professional portrait of young man with glasses",
+      "credit": "Generated via AI",
+      "usage": "Election candidate card"
+    },
+    {
+      "component": "Candidate 3 - Sarah",
+      "path": "src/assets/candidate-3.jpg",
+      "candidateId": "c3",
+      "color": "#FB923C",
+      "colorLight": "#FEF3C7",
+      "colorDark": "#C2410C",
+      "description": "Professional portrait of young Asian woman student",
+      "credit": "Generated via AI",
+      "usage": "Election candidate card"
+    },
+    {
+      "component": "Students Cheering",
+      "path": "src/assets/students-cheering.jpg",
+      "description": "Students cheering enthusiastically at sports stadium",
+      "credit": "Generated via AI",
+      "usage": "Promotional banner, event highlights"
+    },
+    {
+      "component": "Team Huddle",
+      "path": "src/assets/team-huddle.jpg",
+      "description": "Sports team in huddle formation on field",
+      "credit": "Generated via AI",
+      "usage": "Event detail pages, match previews"
+    }
+  ],
+  "candidateColorMapping": [
+    {
+      "candidateId": "c1",
+      "name": "Amina Okafor",
+      "color": "#3B82F6",
+      "colorLight": "#DBEAFE",
+      "colorDark": "#1E40AF",
+      "tailwindClass": "candidate1",
+      "imagePath": "src/assets/candidate-1.jpg"
+    },
+    {
+      "candidateId": "c2",
+      "name": "John Smith",
+      "color": "#EC4899",
+      "colorLight": "#FCE7F3",
+      "colorDark": "#9D174D",
+      "tailwindClass": "candidate2",
+      "imagePath": "src/assets/candidate-2.jpg"
+    },
+    {
+      "candidateId": "c3",
+      "name": "Sarah Chen",
+      "color": "#FB923C",
+      "colorLight": "#FEF3C7",
+      "colorDark": "#C2410C",
+      "tailwindClass": "candidate3",
+      "imagePath": "src/assets/candidate-3.jpg"
+    }
+  ],
+  "unsplashQueries": {
+    "hero": "college campus aerial OR students walking campus",
+    "candidates": "portrait student young adult professional headshot",
+    "sports": "sports team huddle OR students cheering stadium",
+    "activities": "university students group study",
+    "backgrounds": "abstract gradient glass texture"
+  }
+}

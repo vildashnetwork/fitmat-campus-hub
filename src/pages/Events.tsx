@@ -26,7 +26,7 @@ const Events = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20 md:pb-0">
       <Header />
       <div className="container py-8">
         <div className="mb-8">
@@ -49,8 +49,8 @@ const Events = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map(event => (
-            <Card key={event.id} className="shadow-card hover:shadow-elevated transition-smooth">
-              <CardContent className="p-6">
+            <Card key={event.id} className="shadow-card hover:shadow-elevated transition-smooth hover:scale-[1.02]">
+              <CardContent className="p-4 md:p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
@@ -61,15 +61,16 @@ const Events = () => {
                       {event.homeTeam} vs {event.awayTeam}
                     </h3>
                   </div>
-                  <Badge
-                    variant={
-                      event.status === 'live'
-                        ? 'destructive'
-                        : event.status === 'upcoming'
-                        ? 'default'
-                        : 'secondary'
-                    }
-                  >
+                          <Badge
+                            variant={
+                              event.status === 'live'
+                                ? 'destructive'
+                                : event.status === 'upcoming'
+                                ? 'default'
+                                : 'secondary'
+                            }
+                            className={event.status === 'live' ? 'shadow-glow' : ''}
+                          >
                     {event.status}
                   </Badge>
                 </div>

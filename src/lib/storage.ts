@@ -46,6 +46,8 @@ export interface Candidate {
   name: string;
   manifesto: string;
   photo: string;
+  color?: string;
+  colorIndex?: number;
 }
 
 export interface Election {
@@ -170,19 +172,22 @@ const initializeData = () => {
             id: 'c1',
             name: 'Amina Hassan',
             manifesto: 'I will work to improve student welfare, promote inclusivity, and create more opportunities for extracurricular activities.',
-            photo: '👩‍🎓'
+            photo: '👩‍🎓',
+            colorIndex: 1
           },
           {
             id: 'c2',
             name: 'Baba Mensah',
             manifesto: 'My focus is on academic excellence, better facilities, and stronger communication between students and administration.',
-            photo: '👨‍🎓'
+            photo: '👨‍🎓',
+            colorIndex: 2
           },
           {
             id: 'c3',
             name: 'Chioma Okafor',
             manifesto: 'I promise to enhance campus security, organize more social events, and support mental health initiatives.',
-            photo: '👩‍💼'
+            photo: '👩‍💼',
+            colorIndex: 3
           }
         ],
         startAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
