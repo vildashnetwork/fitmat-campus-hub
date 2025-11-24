@@ -24,7 +24,7 @@ export const Header = () => {
           <span className="hidden sm:inline">FITMAT</span>
         </Link>
 
-        <nav className="flex items-center gap-6">
+        <nav className="flex items-center gap-1">
           {currentUser ? (
             <>
               <Link to="/dashboard" className="text-sm font-medium hover:text-primary transition-smooth">

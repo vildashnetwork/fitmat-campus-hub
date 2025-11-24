@@ -12,7 +12,7 @@ import { Calendar, Trophy } from 'lucide-react';
 const Events = () => {
   const { t } = useI18n();
   const [filter, setFilter] = useState<'all' | 'live' | 'upcoming' | 'finished'>('all');
-  
+
   const allEvents = storage.getEvents();
   const events = filter === 'all' ? allEvents : allEvents.filter(e => e.status === filter);
 
@@ -51,6 +51,40 @@ const Events = () => {
           {events.map(event => (
             <Card key={event.id} className="shadow-card hover:shadow-elevated transition-smooth hover:scale-[1.02]">
               <CardContent className="p-4 md:p-6">
+
+                <div id="matches-images" style={{
+                  display: 'flex',
+                  alignItems: 'start',
+                  justifyContent: 'center',
+                  gap: '12px',
+                  height: 200,
+                  background: `url(${event?.bg}) center/cover no-repeat`,
+                }}>
+                  <img
+                    src={event?.one}
+                    id="img1"
+                    style={{
+                      width: '120px',
+                      height: '120px',
+                      objectFit: 'cover',
+                      borderRadius: '8px',
+                      border: '2px solid #ccc',
+                    }}
+                  />
+                  <p style={{ margin: 0, fontWeight: 'bold', fontSize: '1.2rem' }}>vs</p>
+                  <img
+                    src={event?.two}
+                    id="img2"
+                    style={{
+                      width: '120px',
+                      height: '120px',
+                      objectFit: 'cover',
+                      borderRadius: '8px',
+                      border: '2px solid #ccc',
+                    }}
+                  />
+                </div>
+
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
@@ -61,16 +95,16 @@ const Events = () => {
                       {event.homeTeam} vs {event.awayTeam}
                     </h3>
                   </div>
-                          <Badge
-                            variant={
-                              event.status === 'live'
-                                ? 'destructive'
-                                : event.status === 'upcoming'
-                                ? 'default'
-                                : 'secondary'
-                            }
-                            className={event.status === 'live' ? 'shadow-glow' : ''}
-                          >
+                  <Badge
+                    variant={
+                      event.status === 'live'
+                        ? 'destructive'
+                        : event.status === 'upcoming'
+                          ? 'default'
+                          : 'secondary'
+                    }
+                    className={event.status === 'live' ? 'shadow-glow' : ''}
+                  >
                     {event.status}
                   </Badge>
                 </div>
