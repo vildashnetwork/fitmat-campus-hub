@@ -1,0 +1,9 @@
+services:
+  - type: static
+    name: fitmat-frontend
+    env: node
+    region: oregon
+    repo: https://github.com/vildashnetwork/fitmat-campus-hub
+    branch: main
+    buildCommand: "npm ci && npm run build"
+    publishPath: "dist"
