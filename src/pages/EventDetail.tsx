@@ -25,7 +25,7 @@ const EventDetail = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const currentUser = storage.getCurrentUser();
-  
+
   const [event, setEvent] = useState(id ? storage.getEvent(id) : null);
   const [selectedBet, setSelectedBet] = useState<'home' | 'draw' | 'away' | null>(null);
   const [betAmount, setBetAmount] = useState('');
@@ -85,7 +85,7 @@ const EventDetail = () => {
 
   const handlePlaceBet = () => {
     if (!currentUser) return;
-    
+
     const amount = parseFloat(betAmount);
     if (isNaN(amount) || amount <= 0) {
       toast({
@@ -146,10 +146,52 @@ const EventDetail = () => {
           {t('common.back')}
         </Button>
 
+
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Event Info */}
+
+
           <div className="lg:col-span-2 space-y-6">
+
+
+
+
             <Card className="shadow-card">
+
+
+              <div id="matches-images" style={{
+                display: 'flex',
+                alignItems: 'start',
+                justifyContent: 'center',
+                gap: '12px',
+                height: 200,
+                background: `url(${event?.bg}) center/cover no-repeat`,
+              }}>
+                <img
+                  src={event?.one}
+                  id="img1"
+                  style={{
+                    width: '120px',
+                    height: '120px',
+                    objectFit: 'cover',
+                    borderRadius: '8px',
+                    border: '2px solid #ccc',
+                  }}
+                />
+                <p style={{ margin: 0, fontWeight: 'bold', fontSize: '1.2rem' }}>vs</p>
+                <img
+                  src={event?.two}
+                  id="img2"
+                  style={{
+                    width: '120px',
+                    height: '120px',
+                    objectFit: 'cover',
+                    borderRadius: '8px',
+                    border: '2px solid #ccc',
+                  }}
+                />
+              </div>
+
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div>
@@ -166,8 +208,8 @@ const EventDetail = () => {
                       event.status === 'live'
                         ? 'destructive'
                         : event.status === 'upcoming'
-                        ? 'default'
-                        : 'secondary'
+                          ? 'default'
+                          : 'secondary'
                     }
                     className="text-lg px-3 py-1"
                   >
@@ -196,11 +238,10 @@ const EventDetail = () => {
                   <button
                     onClick={() => handleBetClick('home')}
                     disabled={event.status === 'finished'}
-                    className={`p-6 rounded-lg border-2 transition-smooth hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 ${
-                      selectedBet === 'home'
-                        ? 'border-primary bg-primary/10'
-                        : 'border-border hover:border-primary/50'
-                    }`}
+                    className={`p-3 rounded-lg border-2 transition-smooth hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 ${selectedBet === 'home'
+                      ? 'border-primary bg-primary/10'
+                      : 'border-border hover:border-primary/50'
+                      }`}
                   >
                     <p className="text-sm text-muted-foreground mb-2">{t('bet.home')}</p>
                     <p className="text-xl font-bold">{event.homeTeam}</p>
@@ -212,11 +253,10 @@ const EventDetail = () => {
                   <button
                     onClick={() => handleBetClick('draw')}
                     disabled={event.status === 'finished'}
-                    className={`p-6 rounded-lg border-2 transition-smooth hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 ${
-                      selectedBet === 'draw'
-                        ? 'border-primary bg-primary/10'
-                        : 'border-border hover:border-primary/50'
-                    }`}
+                    className={`p-3 rounded-lg border-2 transition-smooth hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 ${selectedBet === 'draw'
+                      ? 'border-primary bg-primary/10'
+                      : 'border-border hover:border-primary/50'
+                      }`}
                   >
                     <p className="text-sm text-muted-foreground mb-2">{t('bet.draw')}</p>
                     <p className="text-xl font-bold">Draw</p>
@@ -228,11 +268,10 @@ const EventDetail = () => {
                   <button
                     onClick={() => handleBetClick('away')}
                     disabled={event.status === 'finished'}
-                    className={`p-6 rounded-lg border-2 transition-smooth hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 ${
-                      selectedBet === 'away'
-                        ? 'border-primary bg-primary/10'
-                        : 'border-border hover:border-primary/50'
-                    }`}
+                    className={`p-3 rounded-lg border-2 transition-smooth hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 ${selectedBet === 'away'
+                      ? 'border-primary bg-primary/10'
+                      : 'border-border hover:border-primary/50'
+                      }`}
                   >
                     <p className="text-sm text-muted-foreground mb-2">{t('bet.away')}</p>
                     <p className="text-xl font-bold">{event.awayTeam}</p>
@@ -260,8 +299,8 @@ const EventDetail = () => {
                         {selectedBet === 'home'
                           ? event.homeTeam
                           : selectedBet === 'away'
-                          ? event.awayTeam
-                          : 'Draw'}
+                            ? event.awayTeam
+                            : 'Draw'}
                       </p>
                       <p className="text-sm text-primary mt-1">
                         {t('bet.odds')}: {getOdds().toFixed(2)}
@@ -337,8 +376,8 @@ const EventDetail = () => {
                 {selectedBet === 'home'
                   ? event.homeTeam
                   : selectedBet === 'away'
-                  ? event.awayTeam
-                  : 'Draw'}
+                    ? event.awayTeam
+                    : 'Draw'}
               </span>
             </div>
             <div className="flex justify-between">
