@@ -76,8 +76,8 @@ const Dashboard = () => {
               <div className="text-3xl font-bold text-success">
                 {userBets.length > 0
                   ? Math.round(
-                      (userBets.filter(b => b.status === 'won').length / userBets.length) * 100
-                    )
+                    (userBets.filter(b => b.status === 'won').length / userBets.length) * 100
+                  )
                   : 0}
                 %
               </div>
@@ -125,6 +125,10 @@ const Dashboard = () => {
                       key={bet.id}
                       className="flex items-center justify-between p-4 rounded-lg border"
                     >
+
+
+
+
                       <div>
                         <p className="font-medium">
                           {event?.homeTeam} vs {event?.awayTeam}
@@ -138,8 +142,8 @@ const Dashboard = () => {
                           bet.status === 'won'
                             ? 'default'
                             : bet.status === 'lost'
-                            ? 'destructive'
-                            : 'secondary'
+                              ? 'destructive'
+                              : 'secondary'
                         }
                       >
                         {bet.status}

@@ -21,7 +21,7 @@ export const Header = () => {
           <div className="p-2 rounded-lg gradient-primary">
             <Trophy className="h-6 w-6 text-white" />
           </div>
-          <span className="hidden sm:inline">FITMAT</span>
+          <span className="hidden sm:inline">FAAP</span>
         </Link>
 
         <nav className="flex items-center gap-1">

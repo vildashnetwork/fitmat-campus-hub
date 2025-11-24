@@ -197,10 +197,12 @@ const EventDetail = () => {
                   <div>
                     <div className="flex items-center gap-2 mb-2">
                       <Trophy className="h-5 w-5 text-muted-foreground" />
-                      <p className="text-sm text-muted-foreground">{event.tournament}</p>
+                      <p className="text-xs text-muted-foreground">{event.tournament}</p>
                     </div>
-                    <CardTitle className="text-3xl mb-2">
-                      {event.homeTeam} vs {event.awayTeam}
+                    <CardTitle className="text-xl mb-2  gap-2">
+                      <p className='primary-100'>  {event.homeTeam.replace(" ", "_")} </p>
+                      vs
+                      <p className='primary-200'>{event.awayTeam.replace(" ", "_")}</p>
                     </CardTitle>
                   </div>
                   <Badge
@@ -211,14 +213,14 @@ const EventDetail = () => {
                           ? 'default'
                           : 'secondary'
                     }
-                    className="text-lg px-3 py-1"
+                    className="text-xs px-3 py-1"
                   >
                     {event.status}
                   </Badge>
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="flex items-center gap-2 text-muted-foreground mb-6">
+                <div className="text-xs flex items-center gap-2 text-muted-foreground mb-6">
                   <Calendar className="h-4 w-4" />
                   {formatDate(event.startAt)}
                 </div>
@@ -238,14 +240,14 @@ const EventDetail = () => {
                   <button
                     onClick={() => handleBetClick('home')}
                     disabled={event.status === 'finished'}
-                    className={`p-3 rounded-lg border-2 transition-smooth hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 ${selectedBet === 'home'
+                    className={`p-1 rounded-lg border-2 transition-smooth hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 ${selectedBet === 'home'
                       ? 'border-primary bg-primary/10'
                       : 'border-border hover:border-primary/50'
                       }`}
                   >
                     <p className="text-sm text-muted-foreground mb-2">{t('bet.home')}</p>
-                    <p className="text-xl font-bold">{event.homeTeam}</p>
-                    <p className="text-2xl font-bold text-primary mt-2">
+                    <p className="text-xs font-bold">{event.homeTeam}</p>
+                    <p className="text-xs font-bold text-primary mt-2">
                       {event.odds.home.toFixed(2)}
                     </p>
                   </button>
@@ -253,14 +255,14 @@ const EventDetail = () => {
                   <button
                     onClick={() => handleBetClick('draw')}
                     disabled={event.status === 'finished'}
-                    className={`p-3 rounded-lg border-2 transition-smooth hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 ${selectedBet === 'draw'
+                    className={`p-1 rounded-lg border-2 transition-smooth hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 ${selectedBet === 'draw'
                       ? 'border-primary bg-primary/10'
                       : 'border-border hover:border-primary/50'
                       }`}
                   >
                     <p className="text-sm text-muted-foreground mb-2">{t('bet.draw')}</p>
-                    <p className="text-xl font-bold">Draw</p>
-                    <p className="text-2xl font-bold text-primary mt-2">
+                    <p className="text-xs font-bold">Draw</p>
+                    <p className="text-xs font-bold text-primary mt-2">
                       {event.odds.draw.toFixed(2)}
                     </p>
                   </button>
@@ -268,14 +270,14 @@ const EventDetail = () => {
                   <button
                     onClick={() => handleBetClick('away')}
                     disabled={event.status === 'finished'}
-                    className={`p-3 rounded-lg border-2 transition-smooth hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 ${selectedBet === 'away'
+                    className={`p-1 rounded-lg border-2 transition-smooth hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 ${selectedBet === 'away'
                       ? 'border-primary bg-primary/10'
                       : 'border-border hover:border-primary/50'
                       }`}
                   >
                     <p className="text-sm text-muted-foreground mb-2">{t('bet.away')}</p>
-                    <p className="text-xl font-bold">{event.awayTeam}</p>
-                    <p className="text-2xl font-bold text-primary mt-2">
+                    <p className="text-xs font-bold">{event.awayTeam}</p>
+                    <p className="text-xs font-bold text-primary mt-2">
                       {event.odds.away.toFixed(2)}
                     </p>
                   </button>

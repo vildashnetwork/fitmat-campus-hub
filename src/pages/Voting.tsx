@@ -23,7 +23,7 @@ const Voting = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const currentUser = storage.getCurrentUser();
-  
+
   const [selectedCandidate, setSelectedCandidate] = useState<{ electionId: string; candidateId: string } | null>(null);
   const [showConfirm, setShowConfirm] = useState(false);
   const elections = storage.getElections();
@@ -136,24 +136,47 @@ const Voting = () => {
                         const percentage = totalVotes > 0 ? (voteCount / totalVotes) * 100 : 0;
 
                         return (
-                        <Card key={candidate.id} className="border-2 hover:border-primary transition-smooth hover:scale-[1.02]" style={{ borderColor: candidate.colorIndex ? `hsl(var(--candidate-${candidate.colorIndex}))` : undefined }}>
+                          <Card key={candidate.id} className="border-2 hover:border-primary transition-smooth hover:scale-[1.02]" style={{ borderColor: candidate.colorIndex ? `hsl(var(--candidate-${candidate.colorIndex}))` : undefined }}>
                             <CardContent className="p-4 md:p-6">
                               <div className="flex items-center gap-3 mb-3">
                                 {candidate.colorIndex && (
-                                  <div 
-                                    className="h-3 w-3 rounded-full shadow-glow" 
+                                  <div
+                                    className="h-3 w-3 rounded-full shadow-glow"
                                     style={{ background: `hsl(var(--candidate-${candidate.colorIndex}))` }}
                                   />
                                 )}
-                                <div className="text-4xl md:text-5xl">{candidate.photo}</div>
+                                {/* <div className="text-4xl md:text-5xl"> */}
+                                <div id="matches-images" style={{
+                                  display: 'flex',
+                                  alignItems: 'start',
+                                  justifyContent: 'center',
+                                  gap: '12px',
+                                  height: 200,
+                                  width: "100%",
+                                  background: `url(${candidate.photo}) center/cover no-repeat`,
+                                }}>
+                                  <img
+                                    src={candidate.bg}
+                                    id="img1"
+                                    style={{
+                                      width: '120px',
+                                      height: '120px',
+                                      objectFit: 'cover',
+                                      borderRadius: '8px',
+                                      border: '2px solid #ccc',
+                                    }}
+                                  />
+                                </div>
+
                               </div>
+                              {/* </div> */}
                               <h3 className="text-lg md:text-xl font-bold mb-2">
                                 {candidate.name}
                               </h3>
                               <p className="text-xs md:text-sm text-muted-foreground mb-4 line-clamp-3">
                                 {candidate.manifesto}
                               </p>
-                              
+
                               {totalVotes > 0 && (
                                 <div className="mb-4">
                                   <div className="flex justify-between text-sm mb-1">

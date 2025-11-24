@@ -21,7 +21,7 @@ const translations: Translations = {
   'nav.logout': { en: 'Logout', fr: 'Déconnexion' },
 
   // Hero
-  'hero.title': { en: 'FITMAT Institute', fr: 'Institut FITMAT' },
+  'hero.title': { en: 'FAAP (Fenasco Activities Of PHIBMAT)', fr: 'FAAP (Fenasco Activities Of PHIBMAT)' },
   'hero.subtitle': { en: 'Campus Betting & Voting Platform', fr: 'Plateforme de paris et vote du campus' },
   'hero.description': { en: 'Place virtual bets on school tournaments and vote in secure elections. All with virtual tokens - no real money involved.', fr: 'Placez des paris virtuels sur les tournois scolaires et votez lors d\'élections sécurisées. Tout avec des jetons virtuels - aucun argent réel impliqué.' },
   'hero.cta.events': { en: 'Browse Events', fr: 'Parcourir les événements' },

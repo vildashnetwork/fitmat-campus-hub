@@ -18,12 +18,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background pb-20 md:pb-0">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative overflow-hidden h-[500px] md:h-[600px] flex items-center justify-center">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ 
+          style={{
             backgroundImage: `url(${heroImage})`,
             filter: 'brightness(0.6)'
           }}
@@ -110,6 +110,42 @@ const Index = () => {
           {upcomingEvents.map(event => (
             <Card key={event.id} className="shadow-card hover:shadow-elevated transition-smooth hover:scale-[1.02]">
               <CardContent className="p-4 md:p-6">
+
+
+                <div id="matches-images" style={{
+                  display: 'flex',
+                  alignItems: 'start',
+                  justifyContent: 'center',
+                  gap: '12px',
+                  height: 200,
+                  background: `url(${event?.bg}) center/cover no-repeat`,
+                }}>
+                  <img
+                    src={event?.one}
+                    id="img1"
+                    style={{
+                      width: '120px',
+                      height: '120px',
+                      objectFit: 'cover',
+                      borderRadius: '8px',
+                      border: '2px solid #ccc',
+                    }}
+                  />
+                  <p style={{ margin: 0, fontWeight: 'bold', fontSize: '1.2rem' }}>vs</p>
+                  <img
+                    src={event?.two}
+                    id="img2"
+                    style={{
+                      width: '120px',
+                      height: '120px',
+                      objectFit: 'cover',
+                      borderRadius: '8px',
+                      border: '2px solid #ccc',
+                    }}
+                  />
+
+                </div>
+
                 <p className="text-sm text-muted-foreground mb-2">{event.tournament}</p>
                 <h3 className="text-base md:text-lg font-bold mb-4">
                   {event.homeTeam} vs {event.awayTeam}
@@ -140,7 +176,7 @@ const Index = () => {
       </section>
 
       {/* Features */}
-      <section 
+      <section
         className="relative py-16 md:py-20 overflow-hidden"
         style={{
           backgroundImage: `url(${studentsCheeringImage})`,
